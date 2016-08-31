@@ -48,7 +48,10 @@ class SignupForm extends React.Component {
                     }
                    )
       this.props.signupRequest(this.state)
-        .then(() => {})
+        .then(() => { // 사용자 등록 성공시 홈페이지로 redirect합니다.
+                      this.context.router.push('/')
+                    }
+             )
         .catch(err => this.setState({ errors:     err.response.data
                                     , isFetching: false
                                     }
@@ -114,5 +117,8 @@ class SignupForm extends React.Component {
 
 SignupForm.propTypes =
   { signupRequest: React.PropTypes.func.isRequired }
+
+SignupForm.contextTypes =
+  { router: React.PropTypes.object.isRequired }
 
 export default SignupForm
