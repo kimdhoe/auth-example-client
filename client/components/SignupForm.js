@@ -48,15 +48,17 @@ class SignupForm extends React.Component {
                     }
                    )
       this.props.signupRequest(this.state)
-        .then(() => { // 사용자 등록 성공시 홈페이지로 redirect합니다.
-                      this.context.router.push('/')
-                    }
-             )
-        .catch(err => this.setState({ errors:     err.response.data
-                                    , isFetching: false
-                                    }
-                                   )
-              )
+        .then(() => {
+          // 사용자 등록 성공시 홈페이지로 redirect하고 안내문구를 띄웁니다.
+          this.props.showWelcome( { type: 'success'
+                                  , text: '사용자 등록이 완료되었습니다.'
+                                  }
+                                )
+          this.context.router.push('/')
+        })
+        .catch(err => { console.log(err)
+          this.setState({ errors: err.response.data, isFetching: false })
+        })
     }
   }
 
@@ -116,7 +118,9 @@ class SignupForm extends React.Component {
 }
 
 SignupForm.propTypes =
-  { signupRequest: React.PropTypes.func.isRequired }
+  { signupRequest: React.PropTypes.func.isRequired
+  , showWelcome:   React.PropTypes.func.isRequired
+  }
 
 SignupForm.contextTypes =
   { router: React.PropTypes.object.isRequired }
