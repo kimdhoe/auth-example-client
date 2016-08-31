@@ -1,9 +1,14 @@
 import React from 'react'
 
+import Navigation from './Navigation'
+
 class App extends React.Component {
   render() {
     return (
-      <h1>Hello World</h1>
+      <div className="container">
+        <Navigation />
+        {this.props.children}
+      </div>
     )
   }
 }
