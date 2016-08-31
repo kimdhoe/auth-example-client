@@ -1,9 +1,9 @@
 import express from 'express'
 
+import { create } from './usersController'
+
 const router = express.Router()
 
-router.post('/', (req, res) => {
-  res.json({ user: true })
-})
+router.post('/', create)
 
 export default router
