@@ -1,0 +1,12 @@
+{
+  "name": "spa-auth-example",
+  "version": "0.0.1",
+  "description": "This application is a product of my learning process. Demonstrates how authentication works in react/redux SPA.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "kimdhoe <kimdhoe1@gmail.com>",
+  "license": "ISC"
+}
