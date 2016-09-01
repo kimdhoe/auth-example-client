@@ -29,4 +29,5 @@ export const verifyUser = () => (req, res, next) => {
 export const signToken = ({ id, username }) =>
   jwt.sign( { id, username }
           , config.secrets.jwt
+          , { expiresIn: config.expireTime }
           )

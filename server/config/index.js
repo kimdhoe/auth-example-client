@@ -7,9 +7,10 @@ const PRODUCTION  = 'production'
 
 // state - Base configurations.
 const config =
-  { env:     ''
-  , port:    process.env.PORT || 3000
-  , secrets: { jwt: process.env.JWT || 'secretIamlookingforajob' }
+  { env:        ''
+  , port:       process.env.PORT || 3000
+  , secrets:    { jwt: process.env.JWT || 'secretIamlookingforajob' }
+  , expireTime: '7 days'
   }
 
 process.env.NODE_ENV = process.env.NODE_ENV || DEVELOPMENT
