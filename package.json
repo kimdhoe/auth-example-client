@@ -36,6 +36,7 @@
     "body-parser": "^1.15.2",
     "colors": "^1.1.2",
     "express": "^4.14.0",
+    "jsonwebtoken": "^7.1.9",
     "lodash": "^4.15.0",
     "morgan": "^1.7.0",
     "shortid": "^2.2.6",

@@ -6,9 +6,11 @@ const TESTING     = 'testing'
 const PRODUCTION  = 'production'
 
 // state - Base configurations.
-const config = { env:  ''
-               , port: process.env.PORT || 3000
-               }
+const config =
+  { env:     ''
+  , port:    process.env.PORT || 3000
+  , secrets: { jwt: process.env.JWT || 'secretIamlookingforajob' }
+  }
 
 process.env.NODE_ENV = process.env.NODE_ENV || DEVELOPMENT
 config.env           = process.env.NODE_ENV
