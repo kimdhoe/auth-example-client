@@ -3,15 +3,15 @@ import { Route
        , IndexRoute
        }         from 'react-router'
 
-import App                 from './components/App'
-import Greetings           from './components/Greetings'
-import SignupPageContainer from './containers/SignupPageContainer'
-import LoginPage from './components/LoginPage'
+import App        from './components/App'
+import Greetings  from './components/Greetings'
+import SignupPage from './components/SignupPage'
+import LoginPage  from './components/LoginPage'
 
 const routes =
   <Route path="/" component={App}>
     <IndexRoute component={Greetings} />
-    <Route path="signup" component={SignupPageContainer} />
+    <Route path="signup" component={SignupPage} />
     <Route path="login"  component={LoginPage} />
   </Route>
 

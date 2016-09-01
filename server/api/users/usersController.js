@@ -26,12 +26,7 @@ export const create = (req, res, next) => {
     const { username, email, password } = req.body
     const password_digest = bcrypt.hashSync(password, 10)
 
-    saveUser({ id: shortid.generate()
-             , username
-             , email
-             , password_digest
-            }
-           )
+    saveUser({ username, email, password_digest })
 
     res.json({ success: true })
   }

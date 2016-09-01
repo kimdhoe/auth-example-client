@@ -11,7 +11,10 @@ const users = [ { id:             shortid.generate()
 
 // Saves a given user to memory.
 export const saveUser = user => {
-  users.push(user)
+  users.push({ ...user
+             , id: shortid.generate()
+             }
+            )
 }
 
 // Finds a user that matches the given information.

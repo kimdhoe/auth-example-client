@@ -5,6 +5,11 @@ import InputField from './InputField'
 import validate   from '../../shared/validations/signup'
 
 class SignupForm extends React.Component {
+  static propTypes    = { signupRequest: React.PropTypes.func.isRequired
+                        , showWelcome:   React.PropTypes.func.isRequired
+                        }
+  static contextTypes = { router: React.PropTypes.object.isRequired }
+
   constructor (props) {
     super(props)
     this.state = { username:             ''
@@ -67,7 +72,7 @@ class SignupForm extends React.Component {
 
     return (
       <form onSubmit={this.onSubmit}>
-        <h2>사용자 등록</h2>
+        <h2>가입</h2>
 
         <InputField
           fieldName="username"
@@ -109,20 +114,12 @@ class SignupForm extends React.Component {
             disabled={this.state.isFetching}
             className="btn btn-primary btn-lg"
           >
-            등록하기
+            보내기
           </button>
         </div>
       </form>
     )
   }
 }
-
-SignupForm.propTypes =
-  { signupRequest: React.PropTypes.func.isRequired
-  , showWelcome:   React.PropTypes.func.isRequired
-  }
-
-SignupForm.contextTypes =
-  { router: React.PropTypes.object.isRequired }
 
 export default SignupForm

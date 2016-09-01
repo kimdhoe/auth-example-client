@@ -8,4 +8,6 @@ const mapDispatchToProps = dispatch => (
   { handleSubmit: component => dispatch(login(component)) }
 )
 
-export default connect(null, mapDispatchToProps)(LoginForm)
+const LoginFormContainer = connect(null, mapDispatchToProps)(LoginForm)
+
+export default LoginFormContainer

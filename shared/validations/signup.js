@@ -7,11 +7,11 @@ const validate = ({ username, email, password, passwordConfirmation }) => {
   if (validator.isNull(username))
     errors.username = '이름이 필요합니다.'
 
-  if (validator.isNull(email))
-    errors.email = '이메일 주소가 필요합니다.'
-
   if (!validator.isEmail(email))
     errors.email = '이메일 주소가 올바르지 않습니다.'
+
+  if (validator.isNull(email))
+    errors.email = '이메일 주소가 필요합니다.'
 
   if (validator.isNull(password))
     errors.password = '암호가 필요합니다.'
