@@ -7,7 +7,12 @@ export const login = component => dispatch => {
            , password:   component.state.password
            }
          )
-    .then(()   => component.context.router.push('/'))
+    .then(res => {
+      const token = res.data.token
+      localStorage.setItem('jwt', token)
+
+      component.context.router.push('/')
+    })
     .catch(err => component.setState({ errors:     err.response.data.errors
                                      , isFetching: false
                                      }
