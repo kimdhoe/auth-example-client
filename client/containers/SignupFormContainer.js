@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 import SignupForm from '../components/SignupForm'
 import { signupRequest
        , showFlashMessage
-       }          from '../actions'
+       }          from '../actions/signup'
 
 const mapDispatchToProps = dispatch => (
   { signupRequest: user    => dispatch(signupRequest(user))

@@ -2,7 +2,7 @@ import React       from 'react'
 import { connect } from 'react-redux'
 
 import FlashMessages          from '../components/FlashMessages'
-import { removeFlashMessage } from '../actions'
+import { removeFlashMessage } from '../actions/signup'
 
 const mapStateToProps = ({ flashMessages }) => (
   { messages: flashMessages }

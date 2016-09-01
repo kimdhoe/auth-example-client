@@ -50,25 +50,25 @@ class LoginForm extends React.Component {
 
         <InputField
           fieldName="identifier"
-          label    ="이름/이메일"
-          value    ={identifier}
-          error    ={errors.identifier}
-          onChange ={this._onChange}
+          label="이름/이메일"
+          value={identifier}
+          error={errors.identifier}
+          onChange={this._onChange}
         />
 
         <InputField
-          type     ="password"
+          type="password"
           fieldName="password"
-          label    ="암호"
-          value    ={password}
-          error    ={errors.password}
-          onChange ={this._onChange}
+          label="암호"
+          value={password}
+          error={errors.password}
+          onChange={this._onChange}
         />
 
       <div className="form-group">
         <button
           className="btn btn-primary btn-lg"
-          disabled ={isFetching}
+          disabled={isFetching}
         >
           로그인
         </button>
