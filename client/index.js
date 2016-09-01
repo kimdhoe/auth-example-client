@@ -9,14 +9,18 @@ import { Router
        }               from 'react-router'
 import thunkMiddleware from 'redux-thunk'
 
-import routes  from './routes'
-import reducer from './reducer'
+import routes       from './routes'
+import reducer      from './reducer'
+import initAuthInfo from './utils/initAuthInfo'
 
 const store = createStore( reducer
                          , applyMiddleware(thunkMiddleware)
                          )
 
 store.subscribe(() => { console.log(store.getState()) })
+console.log(store.getState())
+
+initAuthInfo(store.dispatch)
 
 render( <Provider store={store}>
           <Router history={browserHistory} routes={routes} />

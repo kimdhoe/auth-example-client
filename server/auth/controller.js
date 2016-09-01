@@ -9,5 +9,8 @@ export const login = (req, res, next) => {
                           , username: req.user.username
                           }
                          )
-  res.json({ token })
+  res.json({ token
+           , username: req.user.username
+           }
+          )
 }
