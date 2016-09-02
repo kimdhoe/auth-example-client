@@ -3,11 +3,13 @@ import { connect } from 'react-redux'
 
 import SignupForm           from '../components/SignupForm'
 import { signupRequest }    from '../actions/signup'
+import { login }            from '../actions/auth'
 import { showFlashMessage } from '../actions/flashMessages'
 
 const mapDispatchToProps = dispatch => (
-  { signupRequest: user    => dispatch(signupRequest(user))
-  , showWelcome:   message => dispatch(showFlashMessage(message))
+  { signupRequest: user              => dispatch(signupRequest(user))
+  , login:         (token, username) => dispatch(login(token, username))
+  , showWelcome:   message           => dispatch(showFlashMessage(message))
   }
 )
 

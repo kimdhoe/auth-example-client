@@ -2,10 +2,10 @@ import React       from 'react'
 import { connect } from 'react-redux'
 
 import LoginForm from '../components/LoginForm'
-import { login } from '../actions/auth'
+import { loginRequest } from '../actions/auth'
 
 const mapDispatchToProps = dispatch => (
-  { handleSubmit: component => dispatch(login(component)) }
+  { handleSubmit: component => dispatch(loginRequest(component)) }
 )
 
 const LoginFormContainer = connect(null, mapDispatchToProps)(LoginForm)

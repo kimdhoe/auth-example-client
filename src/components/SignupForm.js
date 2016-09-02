@@ -6,6 +6,7 @@ import validate   from '../validations/signup'
 
 class SignupForm extends React.Component {
   static propTypes    = { signupRequest: React.PropTypes.func.isRequired
+                        , login:         React.PropTypes.func.isRequired
                         , showWelcome:   React.PropTypes.func.isRequired
                         }
   static contextTypes = { router: React.PropTypes.object.isRequired }
@@ -50,16 +51,24 @@ class SignupForm extends React.Component {
                     }
                    )
       this.props.signupRequest(this.state)
-        .then(() => {
-          // 사용자 등록 성공시 홈페이지로 redirect하고 안내문구를 띄웁니다.
-          this.context.router.push('/')
-          this.props.showWelcome( { type: 'success'
-                                  , text: '사용자 등록이 완료되었습니다.'
-                                  }
-                                )
+        .then(res => {
+          // 사용자 등록 성공시 로그인합니다.
+          this.props.login(res.data.token, res.data.username)
+
+          // 사용자 정보 페이지로 리다이렉트합니다.
+          this.context.router.push('/me')
+
+          this.props.showWelcome(
+            { type: 'success'
+            , text: '환영합니다!'
+            }
+          )
         })
-        .catch(err => { console.log(err)
-          this.setState({ errors: err.response.data, isFetching: false })
+        .catch(err => {
+          this.setState({ errors:     err.response.data
+                        , isFetching: false
+                        }
+                       )
         })
     }
   }

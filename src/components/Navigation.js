@@ -7,13 +7,11 @@ const Navigation = ({ isUserLoggedIn, username, logout }) => {
     logout()
   }
 
-  const userLinks  = <ul className="nav navbar-nav navbar-right">
-                       <li><Link to="/protected">Protected Page</Link></li>
-                       <li><a href="#">{username}</a></li>
-                       <li><a href="#" onClick={onClick}>Logout</a></li>
-                     </ul>
+  const userLinks = <ul className="nav navbar-nav navbar-right">
+                      <li><Link to="/me"><strong>{username}</strong></Link></li>
+                      <li><a href="#" onClick={onClick}>Logout</a></li>
+                    </ul>
   const guestLinks = <ul className="nav navbar-nav navbar-right">
-                       <li><Link to="/protected">Protected Page</Link></li>
                        <li><Link to="/signup">Sign up</Link></li>
                        <li><Link to="/login">Login</Link></li>
                      </ul>

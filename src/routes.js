@@ -8,6 +8,7 @@ import Greetings     from './components/Greetings'
 import SignupPage    from './components/SignupPage'
 import LoginPage     from './components/LoginPage'
 import ProtectedPage from './components/ProtectedPage'
+import MePage        from './components/MePage'
 import requireAuth   from './utils/requireAuth'
 
 const routes =
@@ -16,6 +17,7 @@ const routes =
     <Route path="signup"     component={SignupPage} />
     <Route path="login"      component={LoginPage} />
     <Route path="protected"  component={requireAuth(ProtectedPage)} />
+    <Route path="me"         component={requireAuth(MePage)} />
   </Route>
 
 export default routes
