@@ -2,11 +2,11 @@ import axios   from 'axios'
 import shortid from 'shortid'
 
 import { ADD_FLASH_MESSAGE
-       , REMOVE_FLASH_MESSAGE
-       } from '../constants'
+       , REMOVE_FLASH_MESSAGE } from '../constants'
+import config                   from '../config'
 
 export const signupRequest = user =>
-  dispatch => axios.post('/api/users', user)
+  dispatch => axios.post(config.api + '/api/users', user)
 
 export const addFlashMessage = message => (
   { type:    ADD_FLASH_MESSAGE

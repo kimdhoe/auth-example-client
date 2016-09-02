@@ -2,7 +2,7 @@ import React      from 'react'
 import classnames from 'classnames'
 
 import InputField from './InputField'
-import validate   from '../../shared/validations/signup'
+import validate   from '../validations/signup'
 
 class SignupForm extends React.Component {
   static propTypes    = { signupRequest: React.PropTypes.func.isRequired
@@ -23,14 +23,12 @@ class SignupForm extends React.Component {
     this.onSubmit = this.onSubmit.bind(this)
   }
 
-  // Event -> void
   // Effect - 입력받은 이벤트 객체의 target 정보로 사용자 관련 상태를 채워넣습니다.
   onChange (e) {
     this.setState({ [e.target.name]: e.target.value })
   }
 
-  // -> Boolean
-  // 사용자 정보가 올바른지 여부를 반환합니다.
+  // 사용자 정보가 올바릅니까?
   // Effect - 정보가 올바르지 않은 경우 this.state.errors에 해당정보를 채워넣습니다.
   validateUser () {
     const { errors, isValid } = validate(this.state)
@@ -41,7 +39,6 @@ class SignupForm extends React.Component {
     return isValid
   }
 
-  // Event -> void
   // effect - 사용자 정보가 올바른지 확인하고 오류 상태를 채워넣습니다.
   //          서버에 사용자 등록 요청을 보내고 응답을 받아 처리합니다.
   onSubmit (e) {

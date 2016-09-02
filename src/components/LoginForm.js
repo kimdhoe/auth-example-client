@@ -2,7 +2,7 @@ import React   from 'react'
 import isEmpty from 'lodash/isEmpty'
 
 import InputField from './InputField'
-import validate   from '../../shared/validations/login'
+import validate   from '../validations/login'
 
 class LoginForm extends React.Component {
   static propTypes    = { handleSubmit: React.PropTypes.func.isRequired }
@@ -19,6 +19,7 @@ class LoginForm extends React.Component {
     this._onChange = this._onChange.bind(this)
   }
 
+  // 사용자 정보가 형식에 맞는지 확인하고 로그인 요청을 보냅니다.
   _onSubmit (e) {
     e.preventDefault()
 
@@ -33,6 +34,7 @@ class LoginForm extends React.Component {
     }
   }
 
+  // 사용자 정보와 관련된 상태를 업데이트합니다.
   _onChange (e) {
     this.setState({ [e.target.name]: e.target.value })
   }

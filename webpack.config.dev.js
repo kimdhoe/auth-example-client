@@ -5,7 +5,7 @@ const config =
   { context:  __dirname
   , devtool:  'eval-source-map'
   , entry:    [ 'webpack-hot-middleware/client'
-              , path.join(__dirname, 'client/index.js')
+              , path.join(__dirname, 'src/index.js')
               ]
   , output:   { path:       '/'
               , publicPath: '/'
@@ -15,9 +15,7 @@ const config =
               , new webpack.NoErrorsPlugin()
               ]
   , module:   { loaders: [ { test:    /\.js$/
-                           , include: [ path.join(__dirname, 'client')
-                                      , path.join(__dirname, 'shared')
-                                      ]
+                           , include: path.join(__dirname, 'src')
                            , loaders: [ 'react-hot', 'babel' ]
                            }
                          ]

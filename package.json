@@ -1,10 +1,10 @@
 {
-  "name": "spa-auth-example",
+  "name": "spa-auth-example-client",
   "version": "0.0.1",
   "description": "This application is a product of my learning process. Demonstrates how authentication works in react/redux SPA.",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon --watch server --exec babel-node -- server/index.js",
+    "start": "nodemon --watch index.js --exec babel-node -- index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -29,17 +29,12 @@
     "redux-thunk": "^2.1.0",
     "webpack": "^1.13.2",
     "webpack-dev-middleware": "^1.6.1",
-    "webpack-hot-middleware": "^2.12.2"
-  },
-  "dependencies": {
-    "bcrypt": "^0.8.7",
-    "body-parser": "^1.15.2",
-    "colors": "^1.1.2",
+    "webpack-hot-middleware": "^2.12.2",
     "express": "^4.14.0",
-    "jsonwebtoken": "^7.1.9",
     "lodash": "^4.15.0",
-    "morgan": "^1.7.0",
     "shortid": "^2.2.6",
     "validator": "^5.5.0"
+  },
+  "dependencies": {
   }
 }
