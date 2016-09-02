@@ -2,7 +2,7 @@ import findIndex from 'lodash/findIndex'
 
 import { ADD_FLASH_MESSAGE
        , REMOVE_FLASH_MESSAGE
-       } from '../constants'
+       , REMOVE_ALL_FLASH_MESSAGES } from '../constants'
 
 const flashMessages = (messages = [], action) => {
   switch (action.type) {
@@ -16,6 +16,8 @@ const flashMessages = (messages = [], action) => {
                       , ...messages.slice(i + 1)
                       ]
                     : messages
+    case REMOVE_ALL_FLASH_MESSAGES:
+      return []
     default:
       return messages
   }

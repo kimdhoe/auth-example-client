@@ -30,7 +30,7 @@ class ProtectedForm extends React.Component {
 
     return (
       <form onSubmit={this.onSubmit}>
-        <h2>Protected Form</h2>
+        <h2>로그인이 필요한 페이지</h2>
 
         <InputField
           fieldName="name"
