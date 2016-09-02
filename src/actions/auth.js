@@ -17,7 +17,7 @@ export const removeCurrentUser = () => (
 
 export const login = component => dispatch => {
   axios
-    .post( config.api + '/api/auth'
+    .post( config.api + '/auth'
          , { identifier: component.state.identifier
            , password:   component.state.password
            }
