@@ -10,12 +10,13 @@ import LoginPage     from './components/LoginPage'
 import ProtectedPage from './components/ProtectedPage'
 import MePage        from './components/MePage'
 import requireAuth   from './utils/requireAuth'
+import requireGuest  from './utils/requireGuest'
 
 const routes =
   <Route path="/" component={App}>
     <IndexRoute              component={Greetings} />
-    <Route path="signup"     component={SignupPage} />
-    <Route path="login"      component={LoginPage} />
+    <Route path="signup"     component={requireGuest(SignupPage)} />
+    <Route path="login"      component={requireGuest(LoginPage)} />
     <Route path="protected"  component={requireAuth(ProtectedPage)} />
     <Route path="me"         component={requireAuth(MePage)} />
   </Route>
