@@ -1,13 +1,13 @@
 import React       from 'react'
 import { connect } from 'react-redux'
 
-import { showFlashMessage } from '../actions/flashMessages'
+import { addFlashMessage } from '../actions/flashMessages'
 
 // 입력받은 컴포넌트로 사용자 인증을 요구하는 컨테이너를 만들어 반환합니다.
 const requireAuth = ComposedComponent => {
   class Authenticate extends React.Component {
-    static propTypes    = { showFlashMessage: React.PropTypes.func.isRequired
-                          , isUserLoggedIn:   React.PropTypes.bool.isRequired
+    static propTypes    = { addFlashMessage: React.PropTypes.func.isRequired
+                          , isUserLoggedIn:  React.PropTypes.bool.isRequired
                           }
     static contextTypes = { router: React.PropTypes.object.isRequired }
 
@@ -15,10 +15,10 @@ const requireAuth = ComposedComponent => {
     componentWillMount () {
       if (!this.props.isUserLoggedIn) {
         this.context.router.push('/login')
-        this.props.showFlashMessage({ type: 'danger'
-                                    , text: '로그인이 필요한 페이지입니다.'
-                                    }
-                                   )
+        this.props.addFlashMessage({ type: 'danger'
+                                   , text: '로그인이 필요한 페이지입니다.'
+                                   }
+                                  )
       }
     }
 
@@ -39,7 +39,7 @@ const requireAuth = ComposedComponent => {
     { isUserLoggedIn }
   )
 
-  return connect(mapStateToProps, { showFlashMessage })(Authenticate)
+  return connect(mapStateToProps, { addFlashMessage })(Authenticate)
 
 }
 
