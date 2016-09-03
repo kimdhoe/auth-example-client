@@ -29,8 +29,16 @@ class Greetings extends React.Component {
         <p>오류 지적, 개선할 점, 감상 등 모든 피드백 환영합니다.</p>
 
         <ul>
-          <li>Client: ...</li>
-          <li>Server: ...</li>
+          <li>
+            <a href="https://github.com/kimdhoe/auth-example-client">
+              Client App
+            </a>
+          </li>
+          <li>
+            <a href="https://github.com/kimdhoe/auth-example-api">
+              Server App
+            </a>
+          </li>
         </ul>
 
         <h3>요점</h3>
