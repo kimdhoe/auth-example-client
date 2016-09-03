@@ -20,9 +20,9 @@ const config =
                   , 'process.env.API':      JSON.stringify(process.env.API)
                   }
                 )
-              , new webpack.optimize.UglifyJsPlugin(
-                  { compress: { warnings: false } }
-                )
+              // , new webpack.optimize.UglifyJsPlugin(
+              //     { compress: { warnings: false } }
+              //   )
               , new CleanWebpackPlugin( [ PATHS.build ]
                                       , { root: process.cwd() }
                                       )
