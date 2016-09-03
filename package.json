@@ -1,10 +1,11 @@
 {
-  "name": "spa-auth-example-client",
+  "name": "auth-example-client",
   "version": "0.0.1",
   "description": "This application is a product of my learning process. Demonstrates how authentication works in react/redux SPA.",
   "main": "index.js",
   "scripts": {
     "start": "nodemon --watch index.js --exec babel-node -- index.js",
+    "build": "API='https://auth-example-api.herokuapp.com' webpack && cp src/index.html dist/",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -19,6 +20,9 @@
     "babel-preset-stage-1": "^6.13.0",
     "babel-register": "^6.14.0",
     "classnames": "^2.2.5",
+    "clean-webpack-plugin": "^0.1.10",
+    "express": "^4.14.0",
+    "lodash": "^4.15.0",
     "nodemon": "^1.10.2",
     "react": "^15.3.1",
     "react-dom": "^15.3.1",
@@ -27,14 +31,11 @@
     "react-router": "^2.7.0",
     "redux": "^3.5.2",
     "redux-thunk": "^2.1.0",
+    "shortid": "^2.2.6",
+    "validator": "^5.5.0",
     "webpack": "^1.13.2",
     "webpack-dev-middleware": "^1.6.1",
-    "webpack-hot-middleware": "^2.12.2",
-    "express": "^4.14.0",
-    "lodash": "^4.15.0",
-    "shortid": "^2.2.6",
-    "validator": "^5.5.0"
+    "webpack-hot-middleware": "^2.12.2"
   },
-  "dependencies": {
-  }
+  "dependencies": {}
 }
