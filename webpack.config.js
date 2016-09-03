@@ -10,8 +10,9 @@ const config =
   { context:  __dirname
   , devtool:  'source-map'
   , entry:    [ PATHS.app ]
-  , output:   { path:     PATHS.build
-              , filename: 'bundle.js'
+  , output:   { path:       PATHS.build
+              , publicPath: '/auth-example-client/'
+              , filename:   'bundle.js'
               }
   , plugins:  [ new webpack.optimize.OccurenceOrderPlugin()
               , new webpack.optimize.DedupePlugin()
