@@ -21,7 +21,7 @@ class Greetings extends React.Component {
         </ol>
 
         <p>
-          사용자 정보는 데이터베이스 없이 메모리에만 저장되며 서버 어플리케이션이 재시동하기 전까지는 언제든 등록한 계정으로 로그인이 가능합니다. 테스트용으로 <code>guest</code>라는 이름의 사용자가 이미 등록되어 있으며, 암호는 <code>guest</code>입니다.
+          사용자 정보는 데이터베이스 없이 메모리에만 저장되며 서버 어플리케이션이 재시동하기 전까지는 언제든 등록한 계정으로 로그인이 가능합니다. 테스트용으로 <code>guest</code>라는 이름의 사용자가 이미 등록되어 있으며, 이메일 주소는 <code>guest@example.com</code>, 암호는 <code>guest</code>입니다.
         </p>
 
         <h3>소스 코드</h3>
