@@ -2,17 +2,16 @@ const path               = require('path')
 const webpack            = require('webpack')
 const CleanWebpackPlugin = require('clean-webpack-plugin')
 
-const PATHS = { app:   path.join(__dirname, 'src')
-              , build: path.join(__dirname, 'dist')
+const PATHS = { src:   path.join(__dirname, 'src')
+              , build: path.join(__dirname, 'build')
               }
 
 const config =
   { context:  __dirname
   , devtool:  'source-map'
-  , entry:    [ PATHS.app ]
-  , output:   { path:       PATHS.build
-              , publicPath: '/auth-example-client/'
-              , filename:   'bundle.js'
+  , entry:    [ PATHS.src ]
+  , output:   { path:     PATHS.build
+              , filename: 'bundle.js'
               }
   , plugins:  [ new webpack.optimize.OccurenceOrderPlugin()
               , new webpack.optimize.DedupePlugin()

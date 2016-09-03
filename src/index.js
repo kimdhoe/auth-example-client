@@ -6,7 +6,6 @@ import { createStore
 import { Provider }    from 'react-redux'
 import { Router
        , browserHistory
-       , match
        }               from 'react-router'
 import thunkMiddleware from 'redux-thunk'
 
@@ -27,12 +26,8 @@ initAuthInfo(store.dispatch)
 
 browserHistory.listen(() => store.dispatch(removeAllFlashMessages()))
 
-// render( <Provider store={store}>
-//           <Router history={browserHistory} routes={routes} />
-//         </Provider>
-//       , document.getElementById('app')
-//       )
-
-match({ browserHistory, routes }, (error, redirectLocation, renderProps) => {
-  render(<Router {...renderProps} />, document.getElementById('app'))
-})
+render( <Provider store={store}>
+          <Router history={browserHistory} routes={routes} />
+        </Provider>
+      , document.getElementById('app')
+      )

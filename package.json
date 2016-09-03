@@ -4,8 +4,9 @@
   "description": "This application is a product of my learning process. Demonstrates how authentication works in react/redux SPA.",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon --watch index.js --exec babel-node -- index.js",
-    "build": "API='https://auth-example-api.herokuapp.com' webpack && cp src/index.html dist/",
+    "start": "node index.js",
+    "dev": "nodemon --watch index.js --exec babel-node -- index.js",
+    "build": "API='https://auth-example-api.herokuapp.com' webpack && cp src/index.html build/",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],

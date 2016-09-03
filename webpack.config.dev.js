@@ -1,5 +1,5 @@
-import path    from 'path'
-import webpack from 'webpack'
+const path    = require('path')
+const webpack = require('webpack')
 
 const config =
   { context:  __dirname
@@ -23,4 +23,4 @@ const config =
   , resolve:  { extensions: [ '', '.js' ] }
   }
 
-export default config
+module.exports = config

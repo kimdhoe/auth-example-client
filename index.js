@@ -1,26 +1,30 @@
-import path                 from 'path'
-import express              from 'express'
-import webpack              from 'webpack'
-import webpackMiddleware    from 'webpack-dev-middleware'
-import webpackHotMiddleware from 'webpack-hot-middleware'
+const express = require('express')
+const path    = require('path')
 
-import webpackConfig from './webpack.config.dev'
-
-const app      = express()
-const compiler = webpack(webpackConfig)
-
+const app = express()
 app.set('port', process.env.PORT || 3000)
 
-app.use(webpackMiddleware( compiler
-                         , { publicPath: webpackConfig.output.publicPath
-                           , noInfo:     true
-                           }
-                         )
-       )
-app.use(webpackHotMiddleware(compiler))
+if (process.env.NODE_ENV !== 'production') {
+  const webpack              = require('webpack')
+  const webpackMiddleware    = require('webpack-dev-middleware')
+  const webpackHotMiddleware = require('webpack-hot-middleware')
+  const webpackConfig        = require('./webpack.config.dev')
+
+  const compiler = webpack(webpackConfig)
+
+  app.use(webpackMiddleware( compiler
+                           , { publicPath: webpackConfig.output.publicPath
+                             , noInfo:     true
+                             }
+                           )
+         )
+  app.use(webpackHotMiddleware(compiler))
+}
+
+app.use(express.static(path.join(__dirname, 'build')))
 
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'src/index.html'))
+  res.sendFile(path.join(__dirname, 'build/index.html'))
 })
 
 app.listen( app.get('port')
