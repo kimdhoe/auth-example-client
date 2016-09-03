@@ -1,6 +1,5 @@
 import { SET_CURRENT_USER
-       , REMOVE_CURRENT_USER
-       } from '../constants'
+       , REMOVE_CURRENT_USER } from '../constants'
 
 const username = (state = '', action) => {
   switch (action.type) {
