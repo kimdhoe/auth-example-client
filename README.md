@@ -1,8 +1,8 @@
 # SPA Authentication Example
 
-Single-Page Application에서의 사용자 등록과 인증 기능을 구현한 클라이언트 쪽 예시 코드입니다. Redux/React 기반의 SPA에서 JSON Web Token을 이용한 Authenticatoin이 어떻게 이루어지는지 알아보기 위한 시도의 결과물로, 실행가능한 어플리케이션입니다. 구동 중인 어플리케이션을 통해 사용자 계정 생성, 로그인 등을 시험해 보실 숭수 있습니다.
+Single-Page Application에서의 사용자 등록과 인증 기능을 구현한 클라이언트 쪽 예시 코드입니다. Redux/React 기반의 SPA에서 JSON Web Token을 이용한 Authenticatoin이 어떻게 이루어지는지 알아보기 위한 시도의 결과물로, 실행가능한 어플리케이션입니다. 구동 중인 어플리케이션을 통해 사용자 계정 생성, 로그인 등을 시험해 보실 수 있습니다.
 
-[Live Demo](https://api-example-client.herokuapp.com)
+[Live Demo](https://auth-example-client.herokuapp.com)
 
 사용자 정보는 데이터베이스 없이 메모리에만 저장되며 [서버 어플리케이션](https://github.com/kimdhoe/api-example-api)이 재시동하기 전까지는 언제든 등록한 계정으로 로그인이 가능합니다. 테스트용으로 `guest`라는 이름의 사용자가 이미 등록되어 있으며, 이메일 주소는 `guest@example.com`, 암호는 `guest`입니다.
 
@@ -29,7 +29,7 @@ Single-Page Application에서의 사용자 등록과 인증 기능을 구현한 
 - __Webpack__
 - __Express__: 서버 API 어플리케이션은 Express로 작성하였고, 사용자 정보는 데이터베이스 없이 메모리에만 저장됩니다.
 
-## 로컬 환경에서 실행하기  
+## 로컬 환경에서 실행하기
 
 로컬 환경에서 실행하려면 클라이언트와 서버 어플리케이션 둘 모두 필요합니다.
 
@@ -45,3 +45,10 @@ Single-Page Application에서의 사용자 등록과 인증 기능을 구현한 
 1. [서버 어플리케이션](https://github.com/kimdhoe/auth-example-api)을 클론 후 실행합니다.
 2. `npm install`
 3. `npm run dev`
+
+## 소스 코드
+
+오류 지적, 개선할 점, 감상 등 모든 피드백 환영합니다.
+
+- [클라이언트](https://github.com/kimdhoe/auth-example-client)
+- [서버](https://github.com/kimdhoe/auth-example-api)
